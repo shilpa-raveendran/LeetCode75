@@ -1,0 +1,29 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+//if root is empty then the maximum height/depth  is 0
+//if root has not children-->then only one node is there there depth is 1
+//this root node 1 is added with the max of nodes of left n right
+class Solution {
+    public int maxDepth(TreeNode root) {
+        
+        if(root == null){
+            return 0;
+        }
+            return 1+(Math.max(maxDepth(root.left),maxDepth(root.right)));
+        
+    }
+}
